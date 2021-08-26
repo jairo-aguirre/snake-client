@@ -16,9 +16,27 @@ const connect = () => {
 
   conn.on('connect', () => {
     // console.log('Successfully connected to game server!')
-    conn.write('Name: JAG!');
+    conn.write('Name: JAG');
   });
-
+  // conn.on('connect', () => {
+  //   // console.log('Successfully connected to game server!')
+  //   conn.write('Move: up');
+  // });
+  // conn.on('connect', () => {
+  //   // console.log('Successfully connected to game server!')
+  //   conn.write('Move: up');
+  // });
+  // conn.on('connect', () => {
+  //   // console.log('Successfully connected to game server!')
+  //   conn.write('Move: up');
+  // });conn.on('connect', () => {
+  //   // console.log('Successfully connected to game server!')
+  //   conn.write('Move: up');
+  // });
+  // conn.on('connect', () => {
+  //   // console.log('Successfully connected to game server!')
+  //   conn.write('Move: up');
+  // });
 
   return conn;
 };
