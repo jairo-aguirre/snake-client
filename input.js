@@ -1,5 +1,6 @@
 // Stores the active TCP connection object.
 let connection;
+const {NAME, MSG} = require('./constants');
 
 const command = {
   w: "Move: up",
@@ -11,6 +12,8 @@ const command = {
 // setup interface to handle user input from stdin
 const setupInput = (conn) => {
   connection = conn;
+
+  connection.write(`${MSG} Sever! It's me! ${NAME}!`);
 
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -26,9 +29,7 @@ const setupInput = (conn) => {
 
 const handleUserInput = (key) => {
   if (key === '\u0003') process.exit();
-  // console.log(key);
   for (element in command) {
-    // console.log(element);
     if (element === key) {
       connection.write(key);
     }
